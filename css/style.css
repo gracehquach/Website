@@ -1,0 +1,612 @@
+/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
+    /* some basic css resetting */
+body { margin: 0; box-sizing: border-box; }
+a { text-decoration: none; color:black; }
+    
+
+@font-face {
+    font-family: SofiaProRegular;
+    src: url("../fonts/SofiaProRegular.otf");
+}
+@font-face {
+    font-family: STIXTwoMath-Regular;
+    src: url("../fonts/STIXTwoMath-Regular.ttf");
+}
+body{
+    background-color:white; /*site background color*/
+    margin:0px;
+}
+
+/* ==========NAVIGATION============= */
+
+nav{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+}
+
+a:link { 
+    text-decoration: none;  
+} 
+a:visited { 
+    text-decoration: none; 
+} 
+a:hover { 
+    text-decoration: none; 
+} 
+a:active { 
+    text-decoration: none; 
+}
+.menu{
+    padding-left: 10px;
+}
+.menu a{
+    color:black;
+    font-family: "SofiaProRegular";
+    font-size:25px;
+    padding:25px;
+    display: inline-block;
+}
+.menu a:hover{
+    text-decoration-line: underline;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    background-color:white;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 4;
+}
+nav img{
+    width: 200px;
+    height: 50px;
+    padding:15px;
+    margin-right: 500px;
+    transition: .3s;
+}
+
+nav img:hover{
+    transform: scale(1.1);
+}
+
+/* ==========MAIN BODY CONTENT============= */
+
+    h1{
+        color:black;
+        font-family:sans-serif;
+        font-size: 75px;
+        font-weight: 200;
+        width: 580px;
+        padding-bottom: 0px;
+    } 
+    h2{
+        color:black;
+        font-family:sans-serif;
+        font-size: 50px;
+        padding:75px;
+        width: fit-content;
+    } 
+
+    h3{
+        color: black;
+        font-family: sans-serif;
+        font-size: 40px;
+    }
+
+    .button{
+        background-color: #E8AF51;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 7.5px;
+        margin: 5px;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+    .button a{
+        color: white;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    p{
+        color:rgb(0, 0, 0); /*paragraph text color */
+        font-family:Arial, Helvetica, sans-serif; /*paragraph typeface- arial 1st preference, if unavailable use helvetica, etc*/
+        font-size: 24px; /*size of paragraph text*/
+        width: 580px;
+        padding-top: 0px;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+    /* ==========SECTION 1 STYLING============= */
+
+    
+
+#Hero{
+    height: 900px;
+    background-color: #FDF7EC;
+    display: flex;
+    align-items:center ;
+}
+
+#herocontent{
+    position: absolute;
+    z-index: 2;
+    padding: 75px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#heroimg{
+    position: absolute;
+    z-index: 1;
+    left: 450px;
+    top: 175px;
+    height: 500px;
+}
+
+
+/* ==========SECTION 2 STYLING============= */
+
+#Features{
+    padding-top: 50px;
+    padding-left: auto;
+    padding-right: auto;
+    padding-bottom: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#Features h2{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#featurescontent{
+    display: inline-block;
+    height: 500px;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.feature{
+    display: flex;
+    align-items: center;
+    background-color: #FDF7EC;
+    border-radius: 7.5px;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:nth-child(odd) {
+    background: #EBF2FF;
+  }
+
+.feature:hover {
+    transform: scale(1.05);
+  }
+
+.text{
+    padding: 50px;
+    width: 500px;
+    padding-right: 200px;
+    text-align: left;
+}
+
+
+img{
+    height: 300px;
+    padding: 50px;
+    right: 25px;
+    border-radius:15px;
+}
+
+/* ==========SECTION 3 STYLING============= */
+
+#Testimonials{
+    padding-top: 50px;
+}
+
+#Testimonials h2{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4{
+    font-family: serif;
+}
+
+.card{
+    background-color: #FDF7EC;
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profileimg{
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.quote{
+    padding: 25px;
+    padding-top: 0px;
+}
+
+
+.carousel{
+    display: flex;
+    overflow:hidden;
+    position: relative;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    animation: scroll 20s linear infinite;
+  }
+  
+.column1 {
+    animation-direction: normal;
+  }
+  
+.column2 {
+    animation-direction: reverse;
+  }
+  
+.card:hover {
+    animation-play-state:paused;
+    transform: scale(1.2);
+  }
+  
+@keyframes scroll {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+}
+
+#specialist{
+    padding: 25px;
+    margin-left: 300px;
+    background-color: #FDF7EC;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+p{
+    text-align: left;
+}
+
+h5{
+    font-size: 35px;
+    margin: 0px;
+    font-family:sans-serif;
+}
+
+h6{
+    font-size: larger;
+    margin: 10px;
+    font-family: sans-serif;
+    color: #2C3340;
+}
+
+.subheading{
+    color: #E8AF51;
+}
+
+
+
+/* ==========SECTION 4 STYLING============= */
+
+#Pricing{
+    background-color: #FDF7EC;
+}
+
+
+#Pricing h2{
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+
+#pricingcontent1{
+    position: absolute;
+    z-index: 4;
+    padding: 75px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#pricingimg{
+    position: absolute;
+    z-index: 3;
+    left: 700px;
+    height: 250px;
+    padding-top: 125px;
+}
+
+.pricingcard{
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #2C3340;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pricingcard img{
+    height: 50px;
+}
+
+/* ==========FOOTER============= */
+
+
+footer p{
+    font-size: x-small;
+    font-style: italic;
+    margin: 50px;
+}
+
+
+
+.button {
+    background-color:#E8AF51; /* Matching the primary button color */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px; /* Adds space around each button */
+    display: inline-block; /* Ensures buttons are in-line and centered */
+}
+
+.button:hover {
+    background-color:#F3D39F; /* Slightly lighter color on hover */
+}
+
+
+
+
+/* Main Content */
+#savedNotes {
+    margin: 100px auto 20px auto; /* Ensures it's below the fixed nav bar */
+    width: 90%;
+    max-width: 800px;
+    text-align: center; /* Center-aligns the content */
+}
+
+/* Feedback Message */
+#noNotesMessage {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 400px; /* Adjust as needed */
+    text-align: center;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+
+
+/* Add Note Button */
+#addNoteButton {
+    background-color:#968BA3; /* Primary color matching your site's theme */
+    border: none;
+    color: white;
+    padding: 12px 24px; /* Adjust padding for better sizing */
+    font-size: 16px; /* Adjust font size to match other buttons */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    cursor: pointer;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+#addNoteButton:hover {
+    background-color:#CAC5D1; /* Darker shade on hover */
+}
+
+#addNoteButton:active {
+    transform: scale(0.98); /* Slight scale down on click */
+}
+
+#addNoteButton:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Add custom focus style */
+}
+
+
+
+/* ===== MOBILE: Media queries for small mobile resolution. ===== */
+
+@media only screen and (max-width: 360px) { 
+
+    /* ==========NAVIGATION============= */
+
+    nav{
+        width: 360px;
+    }
+    .menu a{
+        margin-left: 0px;
+        margin-right: 2px;
+        font-size: 15px;
+        padding: 10px;
+    }
+    .contact a{
+        padding: 5px;
+    }
+
+    .contact{
+        border-radius: 3px;
+    }
+    nav img{
+        height: 25px;
+        width: 70px;
+        padding: 5px;
+        padding-right: 20px;
+    }
+
+    /* ==========SECTION 1 STYLING============= */
+
+    #Hero{
+        height: 260px;
+    }
+    #herologo{        
+        max-width:200px;
+        align-items: center;
+        justify-content: center;
+        top: 20px;
+        left: 85px;
+    }
+    #herogallery{
+        width:360px;
+        margin-top: 45px;
+    }
+    #arrow{
+        width:15px;
+        padding: 0px;
+        padding-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+    }
+
+    h2{
+        font-size: 25px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+    
+    p{
+        font-size: 10px; 
+    }
+
+    /* ==========SECTION 2 STYLING============= */
+
+    #About{
+        padding-top: 10px;
+        justify-content: center;
+    }
+    .text{
+        position:absolute;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        width: 60%;
+        top: 140px;
+        left: 90px;
+        z-index: 2;
+    }
+    #About img{
+        position: relative;
+        height: 350px;
+        width:auto;
+        z-index: 1;
+        right: 40px;
+    }
+    
+    /* ==========SECTION 3 STYLING============= */
+
+    #Gallery{
+        padding-top: 10px;
+    }
+    #images-grid-container img{
+        width:110px;
+    }
+
+    #images-grid-container {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 10px;
+    }
+
+    /* ==========SECTION 4 STYLING============= */
+
+
+    input[type=text],input[type=message] select, textarea {
+        width: 15px; 
+        padding: 12px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; 
+        margin-bottom: 16px; 
+        font-size: 12px;
+    }
+    label{
+        font-family: "SofiaProRegular";
+        font-size: 15px;
+    }
+    
+    input[type=submit] {
+        background-color: rgb(246, 233, 224);
+        color: black;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: "SofiaProRegular";
+        text-align: center;
+    }
+
+    .submit{
+        text-align: center;
+    }
+
+    .contactform {
+        border-radius: 5px;
+        padding-left: 0;
+        width: 85vw;
+        background-color: rgb(40, 78, 79);
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+   
+    #contactimg1,#contactimg2{
+        display: none;
+    }
+
+
+
+    
+}
+        
