@@ -11,103 +11,148 @@
         <meta name="keywords" content="Product Website">
 
         <link rel="stylesheet" href="css/style.css"> <!--to receive CSS-->
-        <link rel="icon" href="images/logo.png"> 
+        <link rel="icon" href="images/logo.svg"> 
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/themes/light.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/shoelace-autoloader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>    
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>    
+        <script src="js/gsap.min.js"></script>
     </head>
+
     <body>
         <!--NAVIGATION-->
         <nav>
-            <a href="#Hero"><img id="logo" src="images/logo.svg"></a> <!-- logo-->
+            <a href="#Hero"><img id="logo" class="logo" src="images/focusbearlogo.svg" alt="logo"></a> <!-- logo-->
             <div class="menu">
                 <a href="#Features">Features</a>
                 <a href="#Testimonials">Testimonials</a>
                 <a href="#Pricing">Pricing</a>
             </div>
             <div class="button">
-                <a href="#Download">Download</a>
+                <img class="buttonimg" src="images/Download.png" alt="download icon">
+                <a href="#Download">Focus Bear</a>
             </div>
         </nav>
 
         <!--SECTION 1-->
-        <div id="Hero">            
+        <div class="Hero" id="Hero">            
             <div id="herocontent">
                 <h1>Procrastination is optional</h1>
                 <p>Built by a neurodivergent team for AuDHDers who need to be productive, punctual, and peaceful.</p>
-                <div class="button">
+                <div class="button animateButton">
                     <a href="#Download">Download Focus Bear</a>
+                    <img class="buttonimg" src="images/Download.png" alt="Download Icon">
                 </div>
+                <svg id="bear" width="122" height="116" viewBox="0 0 122 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="21.5" cy="21.5" r="18.5" fill="#EDB558" stroke="black" stroke-width="5"/>
+                    <circle cx="100.5" cy="21.5" r="18.5" fill="#EDB558" stroke="black" stroke-width="5"/>
+                    <circle cx="61.5" cy="59.5" r="53.5" fill="#EDB558" stroke="black" stroke-width="5"/>
+                    <circle cx="80.5" cy="49.5" r="3.5" fill="black" stroke="black" stroke-width="5"/>
+                    <circle cx="40.5" cy="49.5" r="3.5" fill="black" stroke="black" stroke-width="5"/>
+                    <path d="M81 75C81 86.0457 72.0457 95 61 95C49.9543 95 41 86.0457 41 75" stroke="black" stroke-width="5"/>
+                    <path d="M61.5 74L48.9426 61.25H74.0574L61.5 74Z" fill="#EAB54F" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M61 73V95.5" stroke="black" stroke-width="5"/>
+                </svg>            
             </div>
-            <img id="heroimg" src="images/img.png">
+            <img id="heroimg" src="images/img.png" alt="Hero Image">
         </div>
+
 
         <!--SECTION 2-->
         <div id="Features">
             <h2>Features</h2>
-            <div id="featurescontent">
-                <div class="feature" id="1">
-                    <div class="text">
+            <sl-carousel class="vertical" pagination orientation="vertical">
+                <sl-carousel-item>
+                    <div class="feature" id="1">
+                        <div class="text">
                         <h3>Block distractions across all your devices</h3>
                         <p>Get into deep work with distraction blocking across all your devices. You can remove blocks if you have an emergency.</p>    
+                        </div>
+                        <img class="featuresimg" src="images/1.png" alt="Feature Image">
                     </div>
-                    <img class="featuresimg" src="images/1.png">
-                </div>
-    
-                <div class="feature" id="2">
-                    <div class="text">
-                        <h3>Morning routines to boost productivity</h3>
-                        <p>Research indicates that doing activities like meditation and exercise in the morning boosts focus throughout the day. Focus Bear doesn't just track your habits, it guides you through your habits in real-time and blocks distractions (no more mornings where Insta derails your exercise regime).</p>    
+                </sl-carousel-item>
+                <sl-carousel-item>
+                    <div class="feature" id="2">
+                        <div class="text">
+                            <h3>Morning routines to boost productivity</h3>
+                            <p>Research indicates that doing activities like meditation and exercise in the morning boosts focus throughout the day. Focus Bear doesn't just track your habits, it guides you through your habits in real-time and blocks distractions (no more mornings where Insta derails your exercise regime).</p>    
+                        </div>
+                        <img class="featuresimg" src="images/2.png" alt="Feature Image">
                     </div>
-                    <img class="featuresimg" src="images/2.png">
-                </div>
-                
-                <div class="feature" id="3">
-                    <div class="text">
-                        <h3>Take productivity-boosting breaks</h3>
-                        <p>Take breaks every 20 minutes - your brain and body will thank you. Detects when you are in hyper-focus on chooses a good time to suggest a break. It also auto-detects meetings so you don't get asked to do breaks when you're on a call.                        </p>
+                </sl-carousel-item>
+                <sl-carousel-item>
+                    <div class="feature" id="3">
+                        <div class="text">
+                            <h3>Take productivity-boosting breaks</h3>
+                            <p>Take breaks every 20 minutes - your brain and body will thank you. Detects when you are in hyper-focus on chooses a good time to suggest a break. It also auto-detects meetings so you don't get asked to do breaks when you're on a call.                        </p>
+                        </div>
+                        <img class="featuresimg" src="images/3.png" alt="Feature Image">
                     </div>
-                    <img class="featuresimg" src="images/3.png">
-                </div>
-
-                <div class="feature" id="4">
-                    <div class="text">
-                        <h3>Make your phone distraction-free</h3>
-                        <p>Get into deep work with distraction blocking across all your devices. You can remove blocks if you have an emergency.                        </p>
+                </sl-carousel-item>
+                <sl-carousel-item>
+                    <div class="feature" id="4">
+                        <div class="text">
+                            <h3>Make your phone distraction-free</h3>
+                            <p>Get into deep work with distraction blocking across all your devices. You can remove blocks if you have an emergency.                        </p>
+                        </div>
+                        <img class="featuresimg" src="images/4.png" alt="Feature Image">
                     </div>
-                    <img class="featuresimg" src="images/4.png">
-                </div>
-
-                <div class="feature" id="5">
-                    <div class="text">
-                        <h3>Never be late... again!</h3>
-                        <p>Being late sucks. Most calendar apps don't give notifications that stand out to ADHD brains. Late No More gives notifications that escalate in intensity as it gets closer to the start time. If you ignore the popups, you'll get verbal alerts                        </p>
+                </sl-carousel-item>
+                <sl-carousel-item>
+                    <div class="feature" id="5">
+                        <div class="text">
+                            <h3>Never be late... again!</h3>
+                            <p>Being late sucks. Most calendar apps don't give notifications that stand out to ADHD brains. Late No More gives notifications that escalate in intensity as it gets closer to the start time. If you ignore the popups, you'll get verbal alerts                        </p>
+                        </div>
+                        <img class="featuresimg" src="images/5.png" alt="Feature Image">
                     </div>
-                    <img class="featuresimg" src="images/5.png">
-                </div>
-
-            </div>
-        </div>
+                </sl-carousel-item>
+            </sl-carousel>
+        </div>     
 
         <!--SECTION 3-->
         <div id="Testimonials">
             <h2>Testimonials</h2>
             <div class="carousel">
                 <div class="column column1">
-                    <div class="card" id="1">
-                        <img class="profileimg" src="images/logo.png">
+                    <div class="card" id="c11">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
                         <div class="quote">
                             <h4>"Incredible helpful app and amazing company."</h4>
                         </div>
                     </div>
         
-                    <div class="card" id="2">
-                        <img class="profileimg" src="images/logo.png">
+                    <div class="card" id="c12">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
                         <div class="quote">
                             <h4>"Incredible helpful app and amazing company."</h4>
                         </div>
                     </div>
         
-                    <div class="card" id="3">
-                        <img class="profileimg" src="images/logo.png">
+                    <div class="card" id="c13">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
+                        <div class="quote">
+                            <h4>"Incredible helpful app and amazing company."</h4>
+                        </div>
+                    </div>                    
+                    <div class="card" id="c14">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
+                        <div class="quote">
+                            <h4>"Incredible helpful app and amazing company."</h4>
+                        </div>
+                    </div>
+        
+                    <div class="card" id="c15">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
+                        <div class="quote">
+                            <h4>"Incredible helpful app and amazing company."</h4>
+                        </div>
+                    </div>
+        
+                    <div class="card" id="c16">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
                         <div class="quote">
                             <h4>"Incredible helpful app and amazing company."</h4>
                         </div>
@@ -115,29 +160,50 @@
                 </div>
     
                 <div class="column column2">
-                    <div class="card" id="1">
-                        <img class="profileimg" src="images/logo.png">
+                    <div class="card" id="c21">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
                         <div class="quote">
                             <h4>"Incredible helpful app and amazing company."</h4>
                         </div>
                     </div>
         
-                    <div class="card" id="2">
-                        <img class="profileimg" src="images/logo.png">
+                    <div class="card" id="c22">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
                         <div class="quote">
                             <h4>"Incredible helpful app and amazing company."</h4>
                         </div>
                     </div>
         
-                    <div class="card" id="3">
-                        <img class="profileimg" src="images/logo.png">
+                    <div class="card" id="c23">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
+                        <div class="quote">
+                            <h4>"Incredible helpful app and amazing company."</h4>
+                        </div>
+                    </div>                   
+
+                    <div class="card" id="c24">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
+                        <div class="quote">
+                            <h4>"Incredible helpful app and amazing company."</h4>
+                        </div>
+                    </div>
+        
+                    <div class="card" id="c25">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
+                        <div class="quote">
+                            <h4>"Incredible helpful app and amazing company."</h4>
+                        </div>
+                    </div>
+        
+                    <div class="card" id="c26">
+                        <img class="profileimg" src="images/logo.png" alt="Profile Image">
                         <div class="quote">
                             <h4>"Incredible helpful app and amazing company."</h4>
                         </div>
                     </div>
                 </div>
                 <div id="specialist"> 
-                    <img src="images/specialist.png">
+                    <img src="images/specialist.png" alt="Specialist">
                     <h5>Marta Galán</h5>
                     <h6 class="subheading">ADHD Specialist</h6>
                     <h6>Registered Clinical Neuropsychologistand ADHD specialist</h6>
@@ -148,42 +214,127 @@
 
         <!--SECTION 4-->
         <div id="Pricing">
-            <div id="pricingcontent1">
-                <h2>Pricing</h2>
-                <p>Focus Bear is a holistic productivity and work life balance app that helps you follow healthy habits in the morning, get a ton done at work and switch off in the evening so you have quality time with loved ones and plenty of sleep.</p>
-                <div class="button">
-                    <a href="#Download">Download Focus Bear</a>
+            <h2>Pricing</h2>
+            <div id="top">                    
+                <div id="pricingcontent1">
+                    <p>Focus Bear is a holistic productivity and work life balance app that helps you follow healthy habits in the morning, get a ton done at work and switch off in the evening so you have quality time with loved ones and plenty of sleep.</p>
+                    <div class="button">
+                        <img class="buttonimg" src="images/Download.png" alt="Download Icon">
+                        <a href="#Download">Focus Bear</a>
+                    </div>
                 </div>
+                <img id="pricingimg" src="images/img.png" alt="Pricing Image">  
             </div>
-            <img id="pricingimg" src="images/img.png">    
-            <div class="pricingcard" id="card1">
-                <img src="images/logo.png">
-                <h5>Basic</h5>
-                <h6>To get you started</h6>
-                <p>Basic Pomodoro
-                    * Max 25 minutes per focus session.        * No AI blocking.
-            Block up to 5websites & apps
-            Basic Morning & Evening Routines
-                    * Max 3 habits per routine.
-            Basic Micro-Breaks
-                    * Max 3 activities per break.
-            Browser Tab Limiter
-            To-Do List</p>
-                <h5>FREE</h5>
-                <div class="button">
-                    <a href="#Download">Download Focus Bear</a>
+            <div id="pricingcontent2">
+                <div class="pricingcard" id="card1">
+                    <sl-details summary="Basic">
+                        <img class="pricecardimg" src="images/logo.png" alt="Logo">
+                        <h5>Basic</h5>
+                        <h6>To get you started</h6>
+                        <div class="text">
+                            <p class="p1">Basic Pomodoro</p>
+                            <p class="p2">* Max 25 minutes per focus session.</p>
+                            <p class="p2">* No AI blocking.</p>
+                            <p class="p1">Block up to 5websites & apps</p>
+                            <p class="p1">Basic Morning & Evening Routines</p>
+                            <p class="p2">* Max 3 habits per routine.</p>
+                            <p class="p1">Basic Micro-Breaks</p>
+                            <p class="p2">* Max 3 activities per break.</p>
+                            <p class="p1">Browser Tab Limiter</p>
+                            <p class="p1">To-Do List</p>
+                        </div>
+                        <div class="price" id="price1">
+                            <h5>FREE</h5>
+                            <div class="button">
+                                <img class="buttonimg" src="images/Download.png" alt="Download Icon">
+                                <a href="#Download">Download Focus Bear</a>
+                            </div>
+                        </div>
+                    </sl-details>
+                </div>    
+                <div class="pricingcard" id="card2">
+                    <sl-details summary="Pro">
+                        <img class="pricecardimg" src="images/logo2.png" alt="Logo">
+                        <h5>Pro</h5>
+                        <h6>Everything in Basic plus...</h6>
+                        <div class="text">
+                            <p class="p1">Super Pomodoro</p>
+                            <p class="p1">Unlimited Blocking</p>
+                            <p class="p1">AI Blocking</p>
+                            <p class="p1">Focus Modes</p>
+                            <p class="p1">Focus Music</p>
+                            <p class="p1">Meeting Detection</p>
+                            <p class="p1">Partner Password</p>
+                            <p class="p1">Customizable Strictness Levels</p>
+                            <p class="p1">Other Add-Ons</p>
+                        </div>
+                        <div class="price" id="price2">
+                            <h5>$4.99/month</h5>
+                            <div class="fineprint">
+                                <p class="p3">7-day free trial</p>
+                                <p class="p3">No credit card required</p>
+                                <p class="p3">Discounts available for students</p>
+                            </div>
+                            <div class="button">
+                                <img class="buttonimg" src="images/Download.png" alt="Download Icon">
+                                <a href="#Download">Download Focus Bear</a>
+                            </div>
+                        </div>
+                    </sl-details>  
                 </div>
-            </div>            
+            </div>     
         </div>
         <!--SECTION 5-->
-        <div id="Download">
-            <h2>Download</h2>
-            
+        <div class="download" id="Download">
+            <div id="downloadcontent">
+                <h2>Download</h2>
+                <p>Built by a neurodivergent team for AuDHDers who need to be productive, punctual, and peaceful.</p>
+                <div class="button animateButton">
+                    <a href="#Download">Download Focus Bear</a>
+                    <img class="buttonimg" src="images/Download.png" alt="Download Icon">
+                </div>
+            </div>
+            <img id="downloadimg" src="images/img.png" alt="Download Image">
         </div>
 
         <!--FOOTER-->
         <footer>
-            <p></p>
+        
+                <div class="footerlogo">                    
+                    <img id="footerimg" src="images/logo.png" alt="Logo">
+                    <div id="footerlogotext">
+                        <h5>focus bear</h5>
+                        <p id="footersubtitle">Built by a neurodivergent team for AuDHDers who need to be productive, punctual, and peaceful.</p>    
+                    </div>
+                </div>
+                <sl-divider style="--color: #2C3340;"></sl-divider>
+                <div id="footercontent">
+                    <div id="footernav">
+                        <h6>Navigation</h6>
+                        <div id="fnavlinks">
+                            <a class="fnav" href="#Features">Features</a>
+                            <a class="fnav" href="#Testimonials">Testimonials</a>
+                            <a class="fnav" href="#Pricing">Pricing</a>
+                        </div>
+                    </div>
+                    <div id="socialmedialinks">
+                        <img src="images/Facebook.png" alt="Facebook">
+                        <img src="images/Instagram.png" alt="Instagram">
+                        <img src="images/twitter.png" alt="Twitter">
+                    </div>
+                    <div id="getapp">
+                        <h6>Get the App</h6>            
+                        <div class="button animateButton">
+                            <a href="#Download">Download Focus Bear</a> 
+                            <img class="buttonimg" src="images/Download.png" alt="Download Icon">
+                        </div>
+                    </div>
+                </div>
+                <div id="copyright">
+                    <p>© 2024 Focus Bear All Rights Reserved.
+                        Website design by Ignore No More </p>
+                </div>
         </footer>
+        <script src="app.js"></script>
     </body>
 </html>
