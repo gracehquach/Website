@@ -17,6 +17,7 @@ body{
     margin:0px;
 }
 
+
 /* ==========NAVIGATION============= */
 
 nav{
@@ -63,11 +64,11 @@ nav{
     margin-right: auto;
     z-index: 4;
 }
-nav img{
+#logo{
     width: 200px;
     height: 50px;
     padding:15px;
-    margin-right: 500px;
+    margin-right: 35vw;
     transition: .3s;
 }
 
@@ -89,7 +90,6 @@ nav img:hover{
         color:black;
         font-family:sans-serif;
         font-size: 50px;
-        padding:75px;
         width: fit-content;
     } 
 
@@ -135,6 +135,15 @@ nav img:hover{
     background-color: #FDF7EC;
     display: flex;
     align-items:center ;
+    width: 100%;
+}
+
+
+#bear{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 #herocontent{
@@ -148,9 +157,22 @@ nav img:hover{
 #heroimg{
     position: absolute;
     z-index: 1;
-    left: 450px;
-    top: 175px;
-    height: 500px;
+    left: 35vw;
+    top: 35vh;
+    height: 55vh;
+}
+
+
+
+.Hero {
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    transition: top 1s ease-in-out;
+}
+
+.Hero.show {
+    top: 0;
 }
 
 
@@ -158,12 +180,12 @@ nav img:hover{
 
 #Features{
     padding-top: 50px;
-    padding-left: auto;
-    padding-right: auto;
     padding-bottom: 100px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    margin-top: 750px;
 }
 
 #Features h2{
@@ -184,19 +206,24 @@ nav img:hover{
     align-items: center;
     background-color: #FDF7EC;
     border-radius: 7.5px;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 20px;
-    position: sticky;
     top: 20px;
     z-index: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    height: 500px;
+    width: 1050px;
 }
 
-.feature:nth-child(odd) {
-    background: #EBF2FF;
-  }
+.feature p{
+    margin-right: 25px;
+    width: 500px;
+}
+
+.featuresimg{
+    border-radius: 10px;
+}
+
+
 
 .feature:hover {
     transform: scale(1.05);
@@ -216,6 +243,24 @@ img{
     right: 25px;
     border-radius:15px;
 }
+
+
+.vertical {
+    max-height: 550px;
+    }
+
+    .vertical::part(base) {
+    grid-template-areas: 'slides slides pagination';
+    }
+
+    .vertical::part(pagination) {
+    flex-direction: column;
+    }
+
+    .vertical::part(navigation) {
+    transform: rotate(90deg);
+    display: flex;
+    }
 
 /* ==========SECTION 3 STYLING============= */
 
@@ -258,6 +303,7 @@ h4{
 
 
 .carousel{
+    padding-left: 75px;
     display: flex;
     overflow:hidden;
     position: relative;
@@ -266,7 +312,8 @@ h4{
 .column {
     display: flex;
     flex-direction: column;
-    animation: scroll 20s linear infinite;
+    animation: scroll 15s linear infinite;
+    height: 500px;
   }
   
 .column1 {
@@ -274,31 +321,38 @@ h4{
   }
   
 .column2 {
-    animation-direction: reverse;
-  }
+    animation: scroll-reverse 10s linear infinite;
+}
+  
   
 .card:hover {
-    animation-play-state:paused;
     transform: scale(1.2);
   }
   
-@keyframes scroll {
-    0% {
-      transform: translateY(100%);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-}
+.column:hover {
+    animation-play-state:paused;
+  }
+
+
+  @keyframes scroll {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+  }
+  
+  @keyframes scroll-reverse {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
 
 #specialist{
     padding: 25px;
-    margin-left: 300px;
+    margin-left: 200px;
     background-color: #FDF7EC;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 p{
@@ -328,55 +382,240 @@ h6{
 
 #Pricing{
     background-color: #FDF7EC;
+    margin-top: 50px;
+    padding-top: 50px;
 }
 
 
 #Pricing h2{
-    padding-bottom: 0px;
-    padding-left: 0px;
+    padding: 75px;
+    padding-top: 0px;
+    padding-bottom: 25px;
     margin-bottom: 0px;
 }
 
+#top{
+    display: flex;
+    align-items:center ;
+    padding-top: 75px;
+    padding-bottom: 150px
+}
 
 #pricingcontent1{
+    width: 700px;
+    margin-left: 75px;
     position: absolute;
-    z-index: 4;
-    padding: 75px;
+    z-index: 2;
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
+
+
 #pricingimg{
+    display: inline;
+    height: 150px;
     position: absolute;
-    z-index: 3;
-    left: 700px;
-    height: 250px;
-    padding-top: 125px;
+    z-index: 1;
+    left: 450px;
+    height: 300px;
+    padding-left: 350px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+}
+
+.price{
+    align-items: center;
+    justify-content:flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+
+sl-details{
+    font-family: sans-serif;
 }
 
 .pricingcard{
-    background-color: white;
     border-radius: 5px;
-    border-width: 1px;
     border-color: #2C3340;
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 500px;
+    margin: 75px;
 }
 
-.pricingcard img{
-    height: 50px;
+
+#pricingcontent2{
+    display: flex;
+    justify-content: center;
 }
+
+
+.pricingcard img{
+    height: 75px;
+    padding: 25px;
+    padding-top: 50px;
+}
+
+.p1{
+    width: 400px;
+}
+
+.p2{
+    margin-left: 15px;
+    width: 400px;
+}
+
+.pricingcard .button{
+    margin: 25px;
+}
+
+
+
+.p3{
+    text-align: center;
+    font-size: small;
+    margin: 0px;
+    padding: 0px;
+    width: 400px;
+}
+
+#price2 .button{
+    margin-top: 20px;
+}
+
+.fineprint{
+    padding: 45px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.text{
+    width: 400px;
+    padding: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/*===========SECTION 5==========*/
+
+#Download{
+    background-color: white;    
+    display: flex;
+    align-items:center ;
+    padding: 75px;
+    padding-top: 125px;
+    height: 200px;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+#Download h2{
+    margin-top: 250px;
+}
+
+
+
+#downloadimg{
+    height: 200px;
+    padding-left: 300px;
+    padding-top: 75px;
+}
+
+#downloadcontent{
+    margin-bottom: 250px;
+}
+
+
+  
 
 /* ==========FOOTER============= */
 
 
-footer p{
-    font-size: x-small;
-    font-style: italic;
-    margin: 50px;
+footer{
+    background-color:#FDF7EC;
 }
 
+#footersubtitle{
+    font-size: small;
+    font-style: normal;
+    width: 300px;
+    margin-top: 5px;
+}
+
+footer p{
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+#footerimg{
+    height: 75px;
+    display: flex;
+    margin-left: 25px;
+}
+
+.footerlogo h5{
+    padding-top: 50px;
+}
+
+.footerlogo{
+    display: flex;
+    align-items:flex-start;
+    height: 150px;
+    width:100%;
+}
+
+sl-divider{
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+footer h6{
+    margin: 0px;
+}
+
+#footernav{
+    font-family: sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 375px;
+    margin-left: 115px;
+}
+
+.fnav{
+    display: block;
+    padding-top: 15px;
+}
+
+#socialmedialinks img{
+    height: 25px;
+}
+
+#socialmedialinks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footercontent{
+    display: flex;
+    padding-top: 25px;
+    column-gap: 175px;
+    align-items:flex-start;
+}
+
+
+#getapp{
+    margin-right: 115px;
+    justify-content: end;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+}
 
 
 .button {
@@ -388,93 +627,103 @@ footer p{
     border-radius: 5px;
     cursor: pointer;
     margin: 5px; /* Adds space around each button */
-    display: inline-block; /* Ensures buttons are in-line and centered */
+    display: inline-flex; /* Ensures buttons are in-line and centered */
+    align-items: center;
+    justify-content: center;
 }
+
+
+.animateButton{
+    color: white;
+    background: linear-gradient(225deg, #FDF7EC, #F3D39F, #E8AF51, #2C3340) 0% 0% / 300% 300%;
+    background-size: 200% auto;
+    animation: gradient_move 3s ease infinite;
+    animation: gradient_move 3s ease infinite;
+}
+
+  @keyframes gradient_move {
+    0%{background-position: 0% 92%}
+    50%{background-position: 100% 9%}
+    100%{background-position: 0% 92%}
+  }
+  
+  @keyframes gradient_move {
+    0%{background-position: 0% 92%}
+    50%{background-position: 100% 9%}
+    100%{background-position: 0% 92%}
+  }
+
+
+#copyright p{
+    font-size: x-small;
+    width: 200px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+#copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button img{
+    height: 15px;
+    padding: 5px;
+}
+
+.button a{
+    padding: 5px;
+}
+
 
 .button:hover {
     background-color:#F3D39F; /* Slightly lighter color on hover */
 }
 
 
-
-
-/* Main Content */
-#savedNotes {
-    margin: 100px auto 20px auto; /* Ensures it's below the fixed nav bar */
-    width: 90%;
-    max-width: 800px;
-    text-align: center; /* Center-aligns the content */
-}
-
-/* Feedback Message */
-#noNotesMessage {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    max-width: 400px; /* Adjust as needed */
-    text-align: center;
-}
-
-/* Hidden class */
-.hidden {
-    display: none;
-}
-
-
-
-/* Add Note Button */
-#addNoteButton {
-    background-color:#968BA3; /* Primary color matching your site's theme */
-    border: none;
-    color: white;
-    padding: 12px 24px; /* Adjust padding for better sizing */
-    font-size: 16px; /* Adjust font size to match other buttons */
-    border-radius: 8px; /* Rounded corners for a modern look */
-    cursor: pointer;
-    margin-top: 20px; /* Space above the button */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-}
-
-#addNoteButton:hover {
-    background-color:#CAC5D1; /* Darker shade on hover */
-}
-
-#addNoteButton:active {
-    transform: scale(0.98); /* Slight scale down on click */
-}
-
-#addNoteButton:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Add custom focus style */
-}
+  
 
 
 
 /* ===== MOBILE: Media queries for small mobile resolution. ===== */
 
-@media only screen and (max-width: 360px) { 
+@media only screen and (max-width: 768px) { 
 
     /* ==========NAVIGATION============= */
 
-    nav{
-        width: 360px;
+
+    .buttonimg{
+        display: none;
     }
+
+    nav{
+        width: max-content;
+    }
+
+
+
+    nav .button{
+        margin: 25px;
+    }
+
+    #logo{
+        margin-right: 150px;
+    }
+
     .menu a{
         margin-left: 0px;
         margin-right: 2px;
         font-size: 15px;
         padding: 10px;
     }
-    .contact a{
-        padding: 5px;
+ 
+
+    .menu{
+        position: sticky;
     }
 
-    .contact{
-        border-radius: 3px;
-    }
     nav img{
         height: 25px;
         width: 70px;
@@ -485,26 +734,21 @@ footer p{
     /* ==========SECTION 1 STYLING============= */
 
     #Hero{
-        height: 260px;
+        height: 400px;
+        background-color: #FDF7EC;
     }
-    #herologo{        
-        max-width:200px;
-        align-items: center;
-        justify-content: center;
-        top: 20px;
-        left: 85px;
+    #heroimg{    
+        height: 17dvh;    
+        left: 40%;
+        top: 10%;
     }
-    #herogallery{
-        width:360px;
-        margin-top: 45px;
+    
+    #herocontent p{
+        width: 300px;
     }
-    #arrow{
-        width:15px;
-        padding: 0px;
-        padding-bottom: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        align-items: center;
+
+    h1{
+        margin-bottom:25px;
     }
 
     h2{
@@ -518,95 +762,261 @@ footer p{
         font-size: 10px; 
     }
 
-    /* ==========SECTION 2 STYLING============= */
-
-    #About{
-        padding-top: 10px;
-        justify-content: center;
-    }
-    .text{
-        position:absolute;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-        width: 60%;
-        top: 140px;
-        left: 90px;
-        z-index: 2;
-    }
-    #About img{
-        position: relative;
-        height: 350px;
-        width:auto;
-        z-index: 1;
-        right: 40px;
-    }
     
-    /* ==========SECTION 3 STYLING============= */
+.Hero {
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    transition: top 1s ease-in-out;
+}
 
-    #Gallery{
-        padding-top: 10px;
-    }
-    #images-grid-container img{
-        width:110px;
-    }
+.Hero.show {
+    top: 0;
+}
 
-    #images-grid-container {
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 10px;
-    }
-
-    /* ==========SECTION 4 STYLING============= */
+/* General container styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
 
-    input[type=text],input[type=message] select, textarea {
-        width: 15px; 
-        padding: 12px; 
-        border: 1px solid #ccc; 
-        border-radius: 4px; /* Rounded borders */
-        box-sizing: border-box; /* Make sure that padding and width stays in place */
-        margin-top: 6px; 
-        margin-bottom: 16px; 
-        font-size: 12px;
-    }
-    label{
-        font-family: "SofiaProRegular";
-        font-size: 15px;
-    }
+
+.button a{
+    font-size: 10px;
+}
+
+.button{
+    padding: 5px;
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em; /* Smaller headings for mobile */
+}
+
+
+
+
+    /* Responsive navigation */
     
-    input[type=submit] {
-        background-color: rgb(246, 233, 224);
-        color: black;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-family: "SofiaProRegular";
-        text-align: center;
-    }
 
-    .submit{
-        text-align: center;
-    }
 
-    .contactform {
-        border-radius: 5px;
-        padding-left: 0;
-        width: 85vw;
-        background-color: rgb(40, 78, 79);
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
+
+    /* Hero section adjustments */
    
-    #contactimg1,#contactimg2{
+
+    /* Features section */
+    .featuresimg{
+        height:15dvh;
+        padding: 25px;
+    }
+
+
+    .feature h3{
+        font-size: 15px;    
+    }
+
+
+    #Features .text{
+        padding: 0px;
+        width: 200px;
+        margin-left: 50px;
+    }
+
+    .feature p{
+        width: 250px;
+    }
+
+    #Features{
+        margin-top: 500px;
+        height: 300px;
+    }
+
+    .vertical{
+        max-height: 300px;
+    }
+
+    #Features h2{
+        margin-bottom: 0px;
+        padding-top: 25px;
+    }
+
+    .feature{
+        width: 650px;
+        height: 300px;
+        display:flex;
+    }
+
+
+
+    /* Testimonials section */
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .quote{
+        font-size: x-small;
+    }
+
+    
+    .carousel{
+        align-items: center;
+        justify-content: space-around;
+        padding: 0px;
+    }
+
+    #Testimonials h2{
+        padding-top: 25px;
+    }
+
+    
+    #specialist{
         display: none;
     }
 
 
 
+    /* Pricing section */
+    #Pricing h2{
+        text-align: left;
+        padding-bottom: 0px;
+        margin: 0px;
+        padding-top: 25px;
+        margin-top: 25px;
+    }
+
+
+
+    #top{
+        padding-top: 45px;
+        padding-bottom: 50px;
+    }
+
+    #Pricing p{
+        width: 300px;
+    } 
     
+
+
+    #pricingimg{
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+        height: 10dvh;    
+        left: 10%;
+    }
+
+    .pricingcard {
+        width: 300px;
+        margin: 20px;
+    }
+
+    .pricingcard .text{
+        padding: 0px;
+    }
+
+    .pricingcardimg{
+        height: 75px;    
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+    .pricingcard h5, h6{
+        font-size: 15px;
+    }
+
+
+    .p3{
+        font-size:7px;
+    }
+
+    #card2 .button{
+        margin-top: 13px;
+    }
+
+
+    /* Download section */
+    #Download {
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #Download h2{
+        padding-top: 25px;
+    }
+
+    #Download p{
+        width: 100%;
+    }
+
+
+    #downloadcontent {
+        text-align: center;
+    }
+
+    #downloadimg {
+        display: none;
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footercontent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    #footernav{
+        margin: 0px;
+    }
+
+    #footersubtitle{
+        font-style: normal;
+    }
+
+
+    #socialmedialinks img {
+        margin: 10px;
+    }
+
+    #getapp{
+        text-align: center;
+        margin: 0px;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+    }
+
+    #getapp h6{
+        padding: 15px;
+    }
+
+  
+    .text{
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+  
+    
+    /* ==========SECTION 3 STYLING============= */
+
+  
+    /* ==========SECTION 4 STYLING============= */
+
+
 }
-        
